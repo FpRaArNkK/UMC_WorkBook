@@ -20,18 +20,31 @@ for i in 1...N {
     arr_num.append(i)
 }
 
+var seq_arr: [[Int]] = []
+
 for i in 0..<M {
-    var flag_i = true
+
     var swap_str: String = ""
     var swap_arr: [String] = []
-    while flag_i == true {
+    while true {
         swap_str = readLine()!
         swap_arr = swap_str.split(separator: " ").map(String.init)
-        if Int(swap_arr[0])!-1 >= 1 || Int(swap_arr[0])!-1 <= N || Int(swap_arr[1])!-1 >= 1 || Int(swap_arr[1])!-1 <= N {
-            flag_i = false
+        if Int(swap_arr[0])! >= 1 && Int(swap_arr[0])! <= N && Int(swap_arr[1])! >= 1 && Int(swap_arr[1])! <= N {
+            seq_arr.append([Int(swap_arr[0])!,Int(swap_arr[1])!])
+            break
         }
     }
-    arr_num.swapAt(Int(swap_arr[0])!-1, Int(swap_arr[1])!-1)
+    
 }
 
-print(arr_num)
+for i in seq_arr {
+    arr_num.swapAt(i[0]-1, i[1]-1)
+}
+
+for i in arr_num{
+    print(i,terminator: " ")
+}
+
+
+
+//https://www.acmicpc.net/problem/10813
