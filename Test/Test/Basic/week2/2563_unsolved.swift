@@ -59,9 +59,15 @@ for i in 1..<set_list[0].endIndex {
         }
     }
 }
+func area_cal([[Set<Int]]){
+    
+}
+area_sub = area_cal(set_list)
 //이 +-해주는 부분을 해결해야함 > 함수로 만들어 해결해보자
 print(10*10*count - area_sub)
-/*
+
+
+/* // 애매하게하다가 실패한 부분
 var sub_area_arr: [Int] = []
 
 for i in seq_arr.startIndex..<seq_arr.endIndex{
@@ -80,15 +86,9 @@ for i in seq_arr.startIndex..<seq_arr.endIndex{
                 } else {
                     
                 }
-                
             }
         }
-        
-        
-        
-        
     }
-    
 }
 
 print(sub_area_arr) */
