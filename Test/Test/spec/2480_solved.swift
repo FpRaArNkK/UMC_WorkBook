@@ -19,3 +19,5 @@ if input_set.count == 1{
 } else {
     print(input_Arr.max()! * 100)
 }
+
+//https://www.acmicpc.net/problem/2525
