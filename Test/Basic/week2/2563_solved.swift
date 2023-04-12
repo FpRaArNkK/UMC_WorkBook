@@ -1,3 +1,28 @@
+let count = Int(readLine()!)!
+var coordinates = Array(repeating: Array(repeating: 0, count: 100), count: 100)
+var area = 0
+
+for i in 0..<count {
+    let input_arr = readLine()!.split(separator: " ").map{Int($0)!}
+    for x in input_arr[0]..<input_arr[0]+10{
+        for y in input_arr[1]..<input_arr[1]+10{
+            coordinates[y][x] = 1
+        }
+    }
+}
+
+for i in 0..<100{
+    for j in 0..<100{
+        if coordinates[j][i] == 1 {
+            area += 1
+        }
+    }
+}
+
+print(area)
+
+
+/* 나중에 도전해봐야할 것
 var count: Int = 0
 
 while true {
@@ -92,5 +117,6 @@ for i in seq_arr.startIndex..<seq_arr.endIndex{
 }
 
 print(sub_area_arr) */
+*/
 
 //https://www.acmicpc.net/problem/2563
