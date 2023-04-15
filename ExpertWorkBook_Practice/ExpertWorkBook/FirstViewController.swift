@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
             secondViewController.result_text = data
             self.present(secondViewController, animated: true, completion: nil)
         }
-        /*
+        /* 이방법 보다는 if-let이 좀 더 어울림
         guard let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {
             return
         }
