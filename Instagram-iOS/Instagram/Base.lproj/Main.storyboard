@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oU0-cE-dsz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FkF-c8-7NI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,10 +9,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="kOJ-VK-WiO">
+            <objects>
+                <navigationController id="FkF-c8-7NI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f3C-Lq-0sB">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9jI-H3-7ag">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="oU0-cE-dsz" kind="relationship" relationship="rootViewController" id="uAL-qg-DNi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vGN-0U-Ppg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="-46"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="G7E-nu-JnV">
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" id="oU0-cE-dsz" customClass="TabBarController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hhu-BQ-bHN">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="InstagramLogo" id="Fxd-vz-Onl"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="Share" id="msC-L6-CDb"/>
+                            <barButtonItem title="Item" image="Heart" id="ABA-Wl-JrN"/>
+                            <barButtonItem title="Item" image="plus" id="cch-qg-iax"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="46j-lM-zap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +52,7 @@
                         <segue destination="JuE-o6-Gm7" kind="relationship" relationship="viewControllers" id="2Zj-1C-Z90"/>
                         <segue destination="2pa-MG-GRJ" kind="relationship" relationship="viewControllers" id="9WT-sZ-vou"/>
                         <segue destination="9ME-Hz-eEi" kind="relationship" relationship="viewControllers" id="ULH-s1-Ysl"/>
-                        <segue destination="RjM-39-RCZ" kind="relationship" relationship="viewControllers" id="oo2-cL-2Zs"/>
+                        <segue destination="jkO-H1-eXn" kind="relationship" relationship="viewControllers" id="F38-EX-sMF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ooh-vV-iSy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -278,21 +305,23 @@
                             <constraint firstItem="XGv-ov-Kvv" firstAttribute="leading" secondItem="url-hb-5Of" secondAttribute="leading" constant="8" id="rNh-sT-jcL"/>
                             <constraint firstItem="url-hb-5Of" firstAttribute="top" secondItem="77u-R9-kZn" secondAttribute="bottom" constant="141.5" id="rhp-k2-E88"/>
                             <constraint firstItem="meu-Fc-tYr" firstAttribute="top" secondItem="77u-R9-kZn" secondAttribute="bottom" constant="-32.5" id="tEx-vL-xXA"/>
-                            <constraint firstItem="wtJ-Dr-2lo" firstAttribute="bottom" secondItem="url-hb-5Of" secondAttribute="bottom" constant="451.5" id="uGU-gs-MRr"/>
+                            <constraint firstItem="wtJ-Dr-2lo" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="url-hb-5Of" secondAttribute="bottom" constant="451.5" id="uGU-gs-MRr"/>
                             <constraint firstItem="meu-Fc-tYr" firstAttribute="leading" secondItem="77u-R9-kZn" secondAttribute="trailing" constant="-41" id="za2-iP-aVk"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="DefaultProfile" selectedImage="FilledDefaultProfile" id="qIc-kC-4MQ"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="2rv-60-Oxg">
                         <leftBarButtonItems>
                             <barButtonItem title="umc_ios" id="ERS-ra-kBf">
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="cnw-BA-Qgg">
+                            <barButtonItem title="Item" id="cnw-BA-Qgg">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zOc-6A-WNV">
                                     <rect key="frame" x="95.5" y="16" width="16" height="12"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="9···" cornerStyle="capsule" titleAlignment="automatic">
+                                    <buttonConfiguration key="configuration" style="tinted" title="9···" cornerStyle="capsule" titleAlignment="automatic">
                                         <backgroundConfiguration key="background">
                                             <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         </backgroundConfiguration>
@@ -312,18 +341,19 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="intro" destination="hYI-TF-uyZ" id="KYl-5w-Llp"/>
                         <outlet property="link" destination="XGv-ov-Kvv" id="XWQ-fk-kCI"/>
                         <outlet property="name" destination="ERS-ra-kBf" id="1Ag-Wf-F0u"/>
                         <outlet property="umc_ios" destination="ERS-ra-kBf" id="sqd-s4-rtX"/>
                         <outlet property="user_name" destination="Wwj-lp-7Sg" id="9iV-kr-Iwm"/>
-                        <segue destination="yUZ-gc-jy7" kind="show" id="HdX-hJ-SGh"/>
+                        <segue destination="yUZ-gc-jy7" kind="show" identifier="goto_edit" id="HdX-hJ-SGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C11-9s-D2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3991" y="909"/>
+            <point key="canvasLocation" x="3310" y="909"/>
         </scene>
         <!--프로필 수정-->
         <scene sceneID="4bu-ro-9RS">
@@ -585,28 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiT-fj-xDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4860.8695652173919" y="908.70535714285711"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="L6B-9m-8Qf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RjM-39-RCZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="DefaultProfile" selectedImage="FilledDefaultProfile" id="Ule-lI-7Wz">
-                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="-1"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qXw-4N-0bs">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jkO-H1-eXn" kind="relationship" relationship="rootViewController" id="on8-Hu-4em"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HLk-j1-gxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3225" y="909"/>
+            <point key="canvasLocation" x="4106" y="909"/>
         </scene>
     </scenes>
     <resources>
@@ -616,9 +625,12 @@
         <image name="FilledReels" width="28" height="28"/>
         <image name="FilledSearch" width="29" height="29"/>
         <image name="FilledShopping" width="29" height="29"/>
+        <image name="Heart" width="23" height="20"/>
         <image name="Home" width="29" height="29"/>
+        <image name="InstagramLogo" width="105" height="28"/>
         <image name="Reels" width="29" height="29"/>
         <image name="Search" width="29" height="29"/>
+        <image name="Share" width="23" height="20"/>
         <image name="Shopping" width="29" height="29"/>
         <image name="avatarPllus" width="120" height="120"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>

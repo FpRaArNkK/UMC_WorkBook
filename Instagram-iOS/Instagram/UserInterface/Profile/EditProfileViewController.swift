@@ -1,16 +1,8 @@
-//
-//  EditProfile.swift
-//  Instagram
-//
-//  Created by 박민서 on 2023/04/16.
-//
-
 import UIKit
 
-protocol sendDataDelegate {
-    func sendData(data : Array<String>)
+protocol EditProfileDelegate {
+    func didSaveProfile(data: [String])
 }
-
 
 extension CALayer {
     func addBorder(_ arr_edge: [UIRectEdge], color: UIColor, width: CGFloat, set: String = "Normal") {
@@ -25,8 +17,8 @@ extension CALayer {
                                     border.frame = CGRect.init(x: 0, y: frame.height - width, width: frame.width, height: width)
                             } else if set == "textfield" {
                                 border.frame = CGRect.init(x: 0, y: frame.height - width + 10, width: self.bounds.width - 20, height: width)
-                                print("조정된?",self.bounds.width)
-                                print("원본",frame.width)
+                                //print("조정된?",self.bounds.width)
+                                //print("원본",frame.width)
                             }
                             break
                         case UIRectEdge.left:
@@ -44,11 +36,10 @@ extension CALayer {
     }
 }
 
-
-
 class EditProfileViewController: UIViewController {
-    var delegate: sendDataDelegate?
     
+    var delegate: EditProfileDelegate?
+
     @IBOutlet weak var photo_view: UIView!
     @IBOutlet weak var info_view: UIView!
     @IBOutlet weak var tap1_view: UIView!
@@ -61,10 +52,11 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var link_text: UITextField!
     
     var data: [String] = ["","","",""]
-    //weak var delegate: ProfileEdit_Delegate?
+    var data_loaded: [String]?
     
     @IBAction func tap_cancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -74,22 +66,51 @@ class EditProfileViewController: UIViewController {
         guard let userNameText = user_text.text else {return}
         guard let introText = intro_text.text else {return}
         guard let linkText = link_text.text else {return}
-        
+    
         data[0] = nameText
         data[1] = userNameText
         data[2] = introText
         data[3] = linkText
         
-        delegate?.sendData(data: data)
+        self.delegate?.didSaveProfile(data: data)
+        self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
+                
         
-        self.navigationController?.popViewController(animated: true)
-        
+    }
+    
+    /*
+    /// profileView -> EditprofileView로 넘어오는 NotificationData Observer
+    private func addNotiObserver_Edit() {
+        print("addNotiObserver_Edit called")
+        NotificationCenter.default.addObserver(self, selector: #selector(loadData_FromProfile), name: NSNotification.Name(rawValue: pushdata_noti), object: nil)
+    }
+    
+    @objc func loadData_FromProfile(notification : NSNotification) {
+        print("loadData called")
+        if let data_inc = notification.object as? [String]{
+            data = data_inc
+            dataDist()
+            print(data)
+        }
+    }
+     */
+    
+    private func dataDist() {
+        //print("dataDist Called")
+        name_text.text = data[0]
+        user_text.text = data[1]
+        intro_text.text = data[2]
+        link_text.text = data[3]
     }
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(data)
+        super.viewDidLoad() 
+        if let data_inc = data_loaded {
+            data = data_inc
+            dataDist()
+        }
         
         self.navigationController?.navigationBar.layer.addBorder([.bottom], color: UIColor.systemGray5, width: 1.0)
 
@@ -102,5 +123,7 @@ class EditProfileViewController: UIViewController {
         intro_text.layer.addBorder([.bottom], color: UIColor.systemGray5, width: 1.0, set: "textfield")
 
     }
+    
+    
     
 }
