@@ -4,11 +4,16 @@ class ProfileViewController: UIViewController,EditProfileDelegate {
     
     var data_inc: [String] = ["umc_ios","가천대학교 UMC iOS","umc ios 트랙 짱","www.makeus.in/umc"]
     
+    var arrImageName: [String] = ["Image1","Image2","Image3","Image4","Image5","Image6"]
+    
+    @IBOutlet weak var subTab: SubTabBar!
+    
     @IBOutlet weak var umc_ios: UIBarButtonItem!
     @IBOutlet weak var name: UIBarButtonItem!
     @IBOutlet weak var user_name: UILabel!
     @IBOutlet weak var intro: UILabel!
     @IBOutlet weak var link: UIButton!
+    @IBOutlet weak var myCollectionView: UICollectionView!
     
     @IBAction func tap_EP(_ sender: Any) {
         
@@ -66,6 +71,7 @@ class ProfileViewController: UIViewController,EditProfileDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        //SubTabBar = UITabBar()
         umc_ios.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)],for: .normal)
         nameDist()
     }
@@ -83,4 +89,49 @@ class ProfileViewController: UIViewController,EditProfileDelegate {
     */
 
 }
+
+extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    // CollectionView item 개수
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return arrImageName.count
+        }
+        
+        // CollectionView Cell의 Object
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCollectionViewCell", for: indexPath) as! GridCollectionViewCell
+            
+            cell.image.image = UIImage(named: arrImageName[indexPath.row]) ?? UIImage()
+            
+            return cell
+        }
+        
+        // CollectionView Cell의 Size
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            
+            let width: CGFloat = collectionView.frame.width / 3 - 1.0
+            
+            return CGSize(width: width, height: width)
+        }
+        
+        // CollectionView Cell의 위아래 간격
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+        
+        // CollectionView Cell의 옆 간격
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 1.0
+        }
+}
+
+/*
+extension SubTabBar: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+            if item.tag == 0 {
+                // Do something for Item 1
+            } else if item.tag == 1 {
+                // Do something for Item 2
+            }
+        }
+}*/
 
