@@ -15,7 +15,9 @@
 		881BFCD529FE61C4002B6248 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 881BFCD329FE61C4002B6248 /* StoryCollectionViewCell.xib */; };
 		882AD9C529FCD4C70035626F /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AD9C429FCD4C70035626F /* GridCollectionViewCell.swift */; };
 		882AD9C729FCD8BF0035626F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AD9C629FCD8BF0035626F /* HomeViewController.swift */; };
-		882AD9CD29FCDCFA0035626F /* story_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AD9CC29FCDCFA0035626F /* story_data.swift */; };
+		882AD9CD29FCDCFA0035626F /* HomeView_Collection_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882AD9CC29FCDCFA0035626F /* HomeView_Collection_data.swift */; };
+		8878D25C2A03DA910085C4E8 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878D25A2A03DA910085C4E8 /* PostCollectionViewCell.swift */; };
+		8878D25D2A03DA910085C4E8 /* PostCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8878D25B2A03DA910085C4E8 /* PostCollectionViewCell.xib */; };
 		888A348E29EB1C4800E66A74 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A348D29EB1C4800E66A74 /* EditProfileViewController.swift */; };
 		888A349129EB1C9500E66A74 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A348D29EB1C4800E66A74 /* EditProfileViewController.swift */; };
 		888A349229EB1C9500E66A74 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A348D29EB1C4800E66A74 /* EditProfileViewController.swift */; };
@@ -61,10 +63,12 @@
 		881BFCD329FE61C4002B6248 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		882AD9C429FCD4C70035626F /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		882AD9C629FCD8BF0035626F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		882AD9CC29FCDCFA0035626F /* story_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story_data.swift; sourceTree = "<group>"; };
+		882AD9CC29FCDCFA0035626F /* HomeView_Collection_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView_Collection_data.swift; sourceTree = "<group>"; };
 		886EEE7C29EBD919006DF910 /* Trouble_Shooting.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Trouble_Shooting.md; sourceTree = "<group>"; };
 		886EEE7E29EBD9AF006DF910 /* 검정화면 캡처.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "검정화면 캡처.png"; sourceTree = "<group>"; };
 		886EEE7F29EBDA6A006DF910 /* 라벨.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "라벨.png"; sourceTree = "<group>"; };
+		8878D25A2A03DA910085C4E8 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		8878D25B2A03DA910085C4E8 /* PostCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCollectionViewCell.xib; sourceTree = "<group>"; };
 		888A348D29EB1C4800E66A74 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		A23BDE2928CFBC3A00A30F40 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A242B66328CCB027006939D6 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,11 +176,13 @@
 			isa = PBXGroup;
 			children = (
 				882AD9C629FCD8BF0035626F /* HomeViewController.swift */,
-				882AD9CC29FCDCFA0035626F /* story_data.swift */,
-				881BFCD229FE61C4002B6248 /* StoryCollectionViewCell.swift */,
-				881BFCD329FE61C4002B6248 /* StoryCollectionViewCell.xib */,
+				882AD9CC29FCDCFA0035626F /* HomeView_Collection_data.swift */,
 				8817C2BD29FED21300D2AD0A /* FirstCollectionViewCell.swift */,
 				8817C2BE29FED21300D2AD0A /* FirstCollectionViewCell.xib */,
+				881BFCD229FE61C4002B6248 /* StoryCollectionViewCell.swift */,
+				881BFCD329FE61C4002B6248 /* StoryCollectionViewCell.xib */,
+				8878D25A2A03DA910085C4E8 /* PostCollectionViewCell.swift */,
+				8878D25B2A03DA910085C4E8 /* PostCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			files = (
 				881BFCD529FE61C4002B6248 /* StoryCollectionViewCell.xib in Resources */,
 				A242B67328CCB029006939D6 /* LaunchScreen.storyboard in Resources */,
+				8878D25D2A03DA910085C4E8 /* PostCollectionViewCell.xib in Resources */,
 				8817C2C029FED21300D2AD0A /* FirstCollectionViewCell.xib in Resources */,
 				A242B67028CCB029006939D6 /* Assets.xcassets in Resources */,
 				A242B66E28CCB027006939D6 /* Main.storyboard in Resources */,
@@ -375,9 +382,10 @@
 				8817C2BF29FED21300D2AD0A /* FirstCollectionViewCell.swift in Sources */,
 				881BFCD129FD154B002B6248 /* SubTabBar.swift in Sources */,
 				A23BDE2A28CFBC3A00A30F40 /* TabBarController.swift in Sources */,
-				882AD9CD29FCDCFA0035626F /* story_data.swift in Sources */,
+				882AD9CD29FCDCFA0035626F /* HomeView_Collection_data.swift in Sources */,
 				A242B66728CCB027006939D6 /* AppDelegate.swift in Sources */,
 				A2554A6228D7896300047C50 /* ProfileViewController.swift in Sources */,
+				8878D25C2A03DA910085C4E8 /* PostCollectionViewCell.swift in Sources */,
 				888A348E29EB1C4800E66A74 /* EditProfileViewController.swift in Sources */,
 				882AD9C729FCD8BF0035626F /* HomeViewController.swift in Sources */,
 				A242B66928CCB027006939D6 /* SceneDelegate.swift in Sources */,
