@@ -24,11 +24,5 @@ class StoryCollectionViewCell: UICollectionViewCell {
         UserImage.clipsToBounds = true
         
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        UserImage.image = nil
-        UserName.text = nil
-        }
 
 }

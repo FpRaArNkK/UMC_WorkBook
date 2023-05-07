@@ -37,3 +37,24 @@ struct post {
     }
     
 }
+
+var story_list: [story] = []
+var post_list: [post] = []
+
+func addDummyStories() {
+    story_list.append(story("Lamp","DefaultProfile"))
+    story_list.append(story("Name1","Image1"))
+    story_list.append(story("Name2","Image2"))
+    story_list.append(story("Name3","Image3"))
+    story_list.append(story("Name4","Image4"))
+    story_list.append(story("Name5","Image5"))
+    story_list.append(story("Name6","Image6"))
+}
+
+func addDummyPosts() {
+    post_list.append(post("Name1", "Image1", "Image4", 1, "하늘이 파랗네요", 1, "5월 3일"))
+    post_list.append(post("Name2", "Image2", "Image5", 2, "하늘이 빨갛네요", 2, "5월 2일"))
+    post_list.append(post("Name3", "Image3", "Image6", 3, "하늘이 노랗네요", 3, "5월 1일"))
+    //post(<#T##UserID: String##String#>, <#T##UserImage: String##String#>, <#T##PostImage: String##String#>, <#T##PostLike: Int##Int#>, <#T##UserText: String##String#>, <#T##CommentCount: Int##Int#>, <#T##PostDate: String##String#>)
+    
+}
