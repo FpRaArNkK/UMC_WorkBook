@@ -137,8 +137,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 */
 
 extension HomeViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ? 128 : 570
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ? 120 : 570
     }
 }
 
@@ -173,6 +173,7 @@ extension HomeViewController: UITableViewDataSource{
             cell.PostDate.text = post_list[indexPath.row].PostDate
             return cell
         default:
+            print("?")
             return UITableViewCell()
         }
     }

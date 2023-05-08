@@ -22,7 +22,6 @@ class StoryCollectionViewCell: UICollectionViewCell {
         White_View.clipsToBounds = true
         UserImage.layer.cornerRadius = 0.5 * UserImage.bounds.size.width
         UserImage.clipsToBounds = true
-        
     }
 
 }

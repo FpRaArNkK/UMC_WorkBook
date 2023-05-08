@@ -55,23 +55,10 @@ extension StoryTableViewCell: UICollectionViewDataSource, UICollectionViewDelega
         else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCollectionViewCell", for: indexPath) as! StoryCollectionViewCell
             cell.UserImage.image = UIImage(named: story_list[indexPath.row].image) ?? UIImage()
+            //print(cell.UserImage.image)
             cell.UserName.text = story_list[indexPath.row].name
+            //print(cell.UserName.text)
             return cell
         }
-    }
-    
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width: CGFloat = collectionView.frame.width/4 - 40
-            let height: CGFloat = collectionView.frame.height
-            return CGSize(width: width, height: height)
-        
-    }
-    
-    // CollectionView Cell의 옆 간격
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-
-            return 0.0
     }
 }
