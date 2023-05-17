@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880C507D2A151007004814A6 /* AlarmHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880C507C2A151007004814A6 /* AlarmHistoryViewController.swift */; };
 		886E82732A0BDBD60004C9F5 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886E82722A0BDBD60004C9F5 /* AlarmViewController.swift */; };
 		88D8BDA52A0AC08D00BD5E13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8BDA42A0AC08D00BD5E13 /* AppDelegate.swift */; };
 		88D8BDA72A0AC08D00BD5E13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8BDA62A0AC08D00BD5E13 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880C507C2A151007004814A6 /* AlarmHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHistoryViewController.swift; sourceTree = "<group>"; };
 		886E82722A0BDBD60004C9F5 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		88D8BDA12A0AC08D00BD5E13 /* Dispatch_Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dispatch_Practice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D8BDA42A0AC08D00BD5E13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				88D8BDB22A0AC08D00BD5E13 /* Info.plist */,
 				88F0BE1E2A0BE6830019ADDE /* AlarmTableViewCell.swift */,
 				88F0BE1F2A0BE6830019ADDE /* AlarmTableViewCell.xib */,
+				880C507C2A151007004814A6 /* AlarmHistoryViewController.swift */,
 			);
 			path = Dispatch_Practice;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				886E82732A0BDBD60004C9F5 /* AlarmViewController.swift in Sources */,
 				88D8BDA92A0AC08D00BD5E13 /* ViewController.swift in Sources */,
 				88D8BDA52A0AC08D00BD5E13 /* AppDelegate.swift in Sources */,
+				880C507D2A151007004814A6 /* AlarmHistoryViewController.swift in Sources */,
 				88D8BDA72A0AC08D00BD5E13 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
