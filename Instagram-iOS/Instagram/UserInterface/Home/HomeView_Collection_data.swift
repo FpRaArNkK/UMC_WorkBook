@@ -7,13 +7,22 @@
 
 import Foundation
 
-struct story {
+struct story: Codable {
     let name: String
     let image: String
+    let StoryImage: String
+    let time: String
     
-    init(_ name: String, _ image: String) {
+    var isViewed: Bool
+    var gotHeart: Bool
+    
+    init(_ name: String, _ image: String, _ StoryImage: String, _ time: String) {
         self.name = name
         self.image = image
+        self.StoryImage = StoryImage
+        self.time = time
+        self.isViewed = false
+        self.gotHeart = false
     }
 }
 
@@ -34,21 +43,22 @@ struct post {
         self.UserText = UserText
         self.CommentCount = CommentCount
         self.PostDate = PostDate
+
     }
-    
 }
+
 
 var story_list: [story] = []
 var post_list: [post] = []
 
 func addDummyStories() {
-    story_list.append(story("Lamp","DefaultProfile"))
-    story_list.append(story("Name1","Image1"))
-    story_list.append(story("Name2","Image2"))
-    story_list.append(story("Name3","Image3"))
-    story_list.append(story("Name4","Image4"))
-    story_list.append(story("Name5","Image5"))
-    story_list.append(story("Name6","Image6"))
+    story_list.append(story("Lamp","DefaultProfile","Story1","3시간"))
+    story_list.append(story("Name1","Image1","Story1","5시간"))
+    story_list.append(story("Name2","Image2","Story2","4시간"))
+    story_list.append(story("Name3","Image3","Story3","7시간"))
+    story_list.append(story("Name4","Image4","Story4","3시간"))
+    story_list.append(story("Name5","Image5","Story5","1시간"))
+    story_list.append(story("Name6","Image6","Story6","2시간"))
 }
 
 func addDummyPosts() {
