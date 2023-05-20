@@ -30,6 +30,10 @@ class AlarmViewController: UIViewController {
         self.AlarmTableView.delegate = self
         self.AlarmTableView.dataSource = self
         
+        if let alarm_list = UserDefaults.standard.stringArray(forKey: "Alarm") {
+            P_Alarm_list = alarm_list
+        } 
+        
         let AlarmCell = UINib(nibName: "AlarmTableViewCell", bundle: nil)
         AlarmTableView.register(AlarmCell, forCellReuseIdentifier: "AlarmTableViewCell")
     }
