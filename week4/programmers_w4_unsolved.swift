@@ -14,7 +14,7 @@ func solution(_ babbling:[String]) -> Int {
         }
     }
         
-    var result: Int = 0
+    var resul: Int = 0
     for element in babbling_copy {
         if element.isEmpty {
             result += 1
