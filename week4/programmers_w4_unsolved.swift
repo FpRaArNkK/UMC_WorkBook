@@ -17,10 +17,10 @@ func solution(_ babbling:[String]) -> Int {
     var resul: Int = 0
     for element in babbling_copy {
         if element.isEmpty {
-            result += 1
+            resul += 1
         }
     }
-    return result
+    return resul
 }
 
 print(solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
